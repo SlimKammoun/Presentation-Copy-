@@ -565,7 +565,7 @@ $$\young(12456,37,8),\young(12568,34,7) $$
 \vspace{4 mm}
 
 \begin{itemize}
-    \item If $\sigma_n \sim {U}_{\mathfrak{S}_n}$ then $ \lambda(\sigma_n) \sim PL_n$. For any $\mu \in \mathbb{Y}_n$
+    \item If $\sigma_n \sim {U}_{\mathfrak{S}_n}$ then $ \lambda(\sigma_n) \sim PL_n$. For any $\mu \in \mathbb{Y}_n$,
     \begin{align*}
     \mathbb{P}(\lambda(\sigma_n)=\mu)&=\frac{\#\{\text{pairs of Young tableaux of shape } \mu\}}{C}\\&=\frac{dim(\mu)^2}{n!}. 
     \end{align*}
@@ -605,8 +605,24 @@ Then  for all  $s \in \mathbb{R}$,
 \end{theorem}
 \end{frame}
 
+\begin{frame}{Green's theorem}
+    We denote by  \begin{align*}
+\mathfrak{I}_1(\sigma):&=\{s\subset\{1,2,\dots,n\};\; \forall i,j \in s,\; (i-j)(\sigma(i)-\sigma(j))\geq 0 \},
+\\\mathfrak{I}_{k+1}(\sigma):&=\{s\cup s',\; s\in \mathfrak{I}_k,\;s'\in \mathfrak{I}_1\}.
+\end{align*}
+We have then
+\begin{lemma}[\cite{GREENE1974254}]
+For any permutation $ \sigma\in \mathfrak{S}_n$,
+\begin{align*}
+\max_{s\in \mathfrak{I}_i(\sigma)} |s| =\sum_{k=1}^i \lambda_k(\sigma).
+\end{align*}
+\end{lemma}
+In particular, $$\max_{s\in \mathfrak{I}_1(\sigma)} |s| =\lambda_1(\sigma)=\ell(\sigma).$$
+\end{frame}
 \section{The Vershik-Kerov-Logan-Shepp shape (global convergence)}
+\begin{frame}{proof}
 
+\end{frame}
 \begin{frame}{Plan}
 \tableofcontents[currentsection,currentsubsection,
     hideothersubsections, 
