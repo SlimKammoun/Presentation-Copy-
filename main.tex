@@ -30,7 +30,8 @@
 \usepackage{array, booktabs}
 \usepackage{graphicx}
 \usepackage{xcolor}
-
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning}
 \usepackage{caption}
 \DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
 
@@ -101,7 +102,7 @@ Universality for  random permutations ?
 \item $\mathfrak{S_n}$ : symmetric group, (the  group of permutations of $\{1,\dots,n\})$
 \\ 
 \item $(\sigma(i_1),\dots,\sigma(i_k))$  increasing  subsequence of $\sigma$ of length $k$ if $i_1<i_2<\dots<i_k$ and $\sigma(i_1)<\dots<\sigma(i_k)$.
-\item $\ell(\sigma)$ : the length of the longest increasing (resp. decreasing) subsequence of $\sigma$.
+\item $\ell(\sigma)$ : the length of the longest increasing subsequence of $\sigma$.
 \item For example : $$\sigma = \begin{pmatrix} 
 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 3 & 8 & \color{red} 1 &\color{red} 2 &\color{red} 4 & 7 &\color{red} 5 &\color{red} 6
@@ -119,7 +120,7 @@ $\ell(\sigma)=5$.
   If $\sigma_n \sim {U}_{\mathfrak{S}_n}$ then
     $$\lim_{n\to \infty}\frac{\mathbb{E}(\ell(\sigma_n))}{\sqrt{n}}=2$$
     and
-    $$ \ell(\sigma_n) \overset{\mathbb{P}}\to 2.$$ 
+    $$ \frac{\ell(\sigma_n)}{\sqrt{n}} \overset{\mathbb{P}}\to 2.$$ 
 \end{theorem}
 \begin{theorem} [\cite*{Baik1999}] \label{dbj}
  If $\sigma_n \sim {U}_{\mathfrak{S}_n}$ then
@@ -134,7 +135,7 @@ $\ell(\sigma)=5$.
     \begin{theorem}[\cite{sk}]
 Assume that the sequence of random permutations  $(\sigma_n)_{n\geq 1}$ satisfies:
 \begin{itemize}
-\item  For all positive integer $n$, $\sigma_n$ is stable under conjugation i.e.  $\forall \sigma , \rho \in \mathfrak{S}_n$,
+\item  For all positive integer $n$, $\sigma_n$ is invariant under conjugation i.e.  $\forall \sigma , \rho \in \mathfrak{S}_n$,
 \begin{equation}\tag{H1}\label{h1}
 \mathbb{P}(\sigma_n=\sigma)=\mathbb{P}(\sigma_n=\rho^{-1}\sigma\rho).
 \end{equation}
@@ -176,15 +177,98 @@ Then
 \end{equation}
 \end{corollary}
 \vspace{10 mm }
-Other applications : Ewens-Pitman, Virtual permutations (Kingman), etc.
-\end{frame}
-\begin{frame}{Proof}
-\end{frame}
-\begin{frame}{Proof}
-
+Other applications : Ewens-Pitman, virtual permutations (Kingman), etc.
 \end{frame}
 
-\section{The first arrows of Random Young tableaux (edge)}
+\begin{frame}{Proof}
+We denote by :
+\begin{itemize}
+    \item $A_\sigma :=
+    \begin{cases}
+        \left\{\rho\in\mathfrak{S}_n, \sigma\circ\rho^{-1}=(i,j)  \text{ and }  \#(\rho)=\#(\sigma)-1 \right\} & \text{ if } \#(\sigma)>1
+        \\ \{\sigma\} & \text{ if } \#(\sigma)=1
+    \end{cases}.
+    $
+    \item $T$ : Markov operator associated to  $\left[\frac{\mathbf{1}_{A_{\sigma_1}(\sigma_2)}}{card(A_{\sigma_1})}\right]_{\sigma_1,\sigma_2\in \mathfrak{S}_n}$
+\end{itemize}
+
+\end{frame}
+\begin{frame}{Proof}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+
+    \node[state] (s1)  {Id};
+    \node[state, below=1cm of s1] (t1) {$(1,2)$};
+    \node[state, right=2cm of t1] (t2) {$(2,3)$};
+	\node[state, left=2cm of t1] (t3) {$(1,3)$};
+	\node[state, below=1cm  of t3] (c1) {$(1,2,3)$};
+	\node[state, right= 5cm of c1] (c2) {$(1,3,2)$};
+        \draw[every loop,
+        line width=0.3mm,
+        auto=left,
+        >=latex,
+        ]
+            (s1) edge[]  node {$\frac{1}{3}$} (t1)
+             (s1) edge[]  node {$\frac{1}{3}$} (t3)
+              (s1) edge[]  node {$\frac{1}{3}$} (t2)
+                 (t1) edge[ ]  node {$\frac{1}{2}$} (c1)
+       (t2) edge[ ]  node {$\frac{1}{2}$} (c1)
+                 (t3) edge[ ]  node {$\frac{1}{2}$} (c1)
+                 (t1) edge[]  node {$\frac{1}{2}$} (c2)
+                 (t2) edge[]  node {$\frac{1}{2}$} (c2)
+                 (t3) edge[]  node {$\frac{1}{2}$} (c2)
+                 (c2) edge[loop below]  node {1} (c2)
+                 (c1) edge[loop below]  node {1} (c1);
+    \end{tikzpicture}
+    \caption{The transition probabilities of $T$ on $\mathfrak{S}_3$}
+    \label{figm}
+\end{figure}
+\end{frame}
+\begin{frame}{Proof}
+    \begin{itemize}
+        \item If $\sigma_n$ is stable under conjugation, $T(\sigma_n)$ is also stable under conjugation.
+        \item $
+\#(T^{n-1} \left(\sigma_{n})\right)\overset{a.s}{=}\max(\#(\sigma_n)-n+1,1)=1. $  
+    \end{itemize}
+    Consequently, if $\sigma_n$ is stable under conjugation, then 
+    \begin{itemize}
+        \item If $\sigma_n$ is stable under conjugation, $T^{n-1}(\sigma_n)$ is also stable under conjugation.
+        \item Almost surely, $\#\left(T^{n-1}(\sigma_n)\right)=1$
+    \end{itemize}
+\end{frame}
+\begin{frame}{Proof}
+\begin{lemma} \label{lem}
+ $\forall \sigma \in  \mathfrak{S}_n$,  $ \forall\tau=(i,j)$ a transposition, 
+\begin{equation*}
+|\ell(\sigma \circ \tau )-\ell(\sigma)|\leq 2.
+\end{equation*}
+\end{lemma}
+\begin{lemma}
+If
+\begin{itemize}
+    \item $\sigma_n$ is invariant under conjugation. 
+    \item Almost surely, $\#(\sigma_n)=1$.
+\end{itemize}
+Then  $\sigma_n \sim Ew(0).$
+\end{lemma}
+\end{frame}
+
+\begin{frame}{Proof}
+\begin{corollary}
+If $\sigma_n$ is invariant under conjugation then
+\begin{itemize}
+    \item $T^{n-1}(\sigma_n)\sim Ew(0).$
+    \item Almost surely, $$
+|\ell(T^{n-1}(\sigma_n))-\ell(\sigma_n)|=
+|\ell(T^{\#(\sigma_n)-1}(\sigma_n))-\ell(\sigma_n)|
+\leq  2(\#(\sigma_n)-1).$$
+\end{itemize}
+Assume that  $\frac{\#(\sigma_n)}{n^\frac16} \overset{\mathbb{P}}\to 0 $.  We obtain $\frac{\ell(T^{n-1}(\sigma_n))-\ell(\sigma_n)}{n^\frac 16} \overset{\mathbb{P}}\to 0$.
+\end{corollary}    
+Uniform case \Rightarrow Ew(0) \Rightarrow  Invariant under conjugation +   $\frac{\#(\sigma_n)}{n^\frac16} \overset{\mathbb{P}}\to 0 $
+\end{frame}
+\section{The first arrows of random Young tableaux (edge)}
 
 \begin{frame}{Plan}
 \tableofcontents[currentsection,currentsubsection,
@@ -576,7 +660,7 @@ $$    \mathbb{P}(\lambda_\theta=\mu) = e^{-\theta}\frac{\theta^{|\mu|}dim(\mu)^2
 
 \end{frame}
 
-\begin{frame}{Edge : uniform case}
+\begin{frame}{Edge : Plancherel case}
 \begin{theorem} [\cite*{Borodin2000}]
  If $\sigma_n \sim {U}_{\mathfrak{S}_n}$ then  $\forall k \geq 1 $,  $\forall s_1,s_2,\dots,s_k \in \mathbb{R}$,
 \begin{equation*} 
@@ -590,7 +674,7 @@ $\{\xi_1\geq \xi_2,\dots\geq  \xi_k \geq  \dots \}$ : Airy ensemble.
     \begin{theorem}[\cite{sk}]
 Assume that the sequence of random permutations  $(\sigma_n)_{n\geq 1}$ satisfies:
 \begin{itemize}
-\item  For all positive integer $n$, $\sigma_n$ is stable under conjugation i.e.  $\forall \sigma , \rho \in \mathfrak{S}_n$,
+\item  For all positive integer $n$, $\sigma_n$ is invariant under conjugation i.e.  $\forall \sigma , \rho \in \mathfrak{S}_n$,
 \begin{equation}\tag{H1}
 \mathbb{P}(\sigma_n=\sigma)=\mathbb{P}(\sigma_n=\rho^{-1}\sigma\rho).
 \end{equation}
@@ -620,8 +704,21 @@ For any permutation $ \sigma\in \mathfrak{S}_n$,
 In particular, $$\max_{s\in \mathfrak{I}_1(\sigma)} |s| =\lambda_1(\sigma)=\ell(\sigma).$$
 \end{frame}
 \section{The Vershik-Kerov-Logan-Shepp shape (global convergence)}
-\begin{frame}{proof}
-
+\begin{frame}{Proof}
+\begin{lemma} \label{lemma2}
+For any permutation $\sigma$ and transposition  $\tau$,\begin{equation*} \label{sum}
+\left|\sum_{k=1}^i \lambda_k(\sigma)-{\lambda}_k\left(\sigma\circ\tau\right)\right| \leq 2
+\end{equation*}
+Consequently, 
+\begin{equation*} \label{sep}
+\left|\lambda_i(\sigma)-\lambda_i\left(\sigma\circ\tau\right)\right| \leq 4.
+\end{equation*}
+\end{lemma}
+\begin{corollary}
+\begin{equation} \label{sep2}
+\left|\lambda_i(\sigma_n)-\lambda_i\left(T^{n-1}(\sigma_n)\right)\right| \leq 4(\#(\sigma_n)-1).
+\end{equation}
+\end{corollary}
 \end{frame}
 \begin{frame}{Plan}
 \tableofcontents[currentsection,currentsubsection,
@@ -630,36 +727,17 @@ In particular, $$\max_{s\in \mathfrak{I}_1(\sigma)} |s| =\lambda_1(\sigma)=\ell(
 ]
 \end{frame}
 
-\begin{frame}{Théorème de Baik, Deift et Johannson}
-    \begin{theorem}[\cite*{Baik1999}] 
-Si $\sigma_n \sim U_{\mathfrak{S}_n}$ alors
-\begin{equation*} 
-\lim_{n \to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s),
-\end{equation*}
-o\`u  $F_2$ est la fonction de répartition de la distribution de Tracy-Widom.
-\end{theorem}
-\vspace{10 mm}
 
-On parle "d'universalité":
+
+\begin{frame}{Russian notations}
 \begin{itemize}
-    \item Plus grande (petite) valeur propre de matrices aléatoires.
-    \item Modèles de particules comme le TASEP.        \item Dernier passage de percolation.
-
+    \item Rotate the diagram by $\frac{3\pi}{4}$.
+    \item Complete the high function by  $x\to|x|$.
+    \item We denote by $L_\lambda$ the resulting function.
 \end{itemize}
-\end{frame}
-
-\begin{frame}{Notation Russe}
-\begin{itemize}
-    \item On fait une rotation du tableau par $\frac{3\pi}{4}$.
-    \item On regarde la fonction de hauteur complétée par $|x|$.
-    \item On note la fonction obtenue $L_\lambda$.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Notation Russe}
- \begin{figure}
+\begin{figure}
 \centering
-\begin{tikzpicture}    [/pgfplots/y=0.42cm, /pgfplots/x=0.42cm]
+\begin{tikzpicture}    [/pgfplots/y=0.3cm, /pgfplots/x=0.3cm]
       \begin{axis}[
     axis x line=center,
     axis y line=center,
@@ -691,8 +769,8 @@ On parle "d'universalité":
     axis y line=center,
     xmin=-7.07, xmax=7.07,
     ymin=0, ymax=8, anchor=origin, clip=false,
-    xtick={-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7},
-    ytick={0,1,2,3,3,4,5,6,7,8},
+    xtick={-7,-5,-3,-1,1,3,5,7},
+    ytick={0,2,4,6,8},
     legend pos=north west,
     ymajorgrids=false,
     xmajorgrids=false,rotate around={0:(rel axis cs:0,0)},
@@ -703,6 +781,8 @@ On parle "d'universalité":
      \label{figL}
 \end{figure} 
 \end{frame}
+
+
 
 \begin{frame}{Forme limite de Vershik-Kerov-Logan-Shepp}
     \begin{theorem}[\cite{vershik,LOGAN}]
@@ -733,12 +813,7 @@ où
 \end{figure}
 
 \end{frame}
-\begin{frame}{Plan}
-\tableofcontents[currentsection,currentsubsection,
-    hideothersubsections, 
-    sectionstyle=show/shaded,
-]
-\end{frame}
+
 
  \begin{frame}{Forme limite}
     \begin{theorem}[\cite{sk}]
@@ -760,19 +835,6 @@ Alors pour  tout  $\varepsilon>0$,
 \end{theorem}
 \end{frame}
 
-\begin{frame}{Idée de la preuve}
-    \begin{lemma}
-Si $\sigma_n$ est une permutation aléatoire stable sous conjugaison, il existe une permutation aléatoire $\sigma'_n$ vérifiant.
-\begin{itemize}
-    \item $\sigma'_n \sim Ew(0)$
-    \item Presque sûrement, 
-    \begin{equation*}
-    |\ell(\sigma'_n)-\ell(\sigma_n)|\leq 2(\#(\sigma_n-1)).
-    \end{equation*}
-    
-\end{itemize}
-\end{lemma}
-\end{frame}
 
 
 \begin{frame}
