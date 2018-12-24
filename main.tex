@@ -82,8 +82,8 @@
 \begin{table}[]
 \begin{tabular}{|l|l|l|}
 \hline
-                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ controle on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Plancherel\\ (Uniform permutation)\end{tabular} \\ \hline
-Extreme particule  & T.W                                                                                        & T.W                                                                        \\ \hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Plancherel\\ (Uniform permutation)\end{tabular} \\ \hline
+Extreme particle  & T.W                                                                                        & T.W                                                                        \\ \hline
 Edge               & Soft edge (Airy)                                                                           & Soft edge  (Airy)                                                          \\ \hline
 Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
 Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
@@ -799,8 +799,8 @@ Consequently,
 where
 \begin{align*}
 \Omega(s):=\begin{cases}
-\frac{2}{\pi}(s\arcsin({s})+\sqrt{1-s^2}) & \text{ si } |s|<1 \\ 
-|s| & \text{ si } |s|\geq 1 
+\frac{2}{\pi}(s\arcsin({s})+\sqrt{1-s^2}) & \text{ if } |s|<1 \\ 
+|s| & \text{ if } |s|\geq 1 
 \end{cases}.
 \end{align*}
     \end{theorem}
@@ -815,7 +815,7 @@ where
     \input{diag.pdf_tex}
        
 
-    \caption{Typical Young diragram under the Plancherel distribution}
+    \caption{Typical Young diagram under the Plancherel distribution}
 \end{figure}
 
 \end{frame}
@@ -867,7 +867,7 @@ Consequently,
 \end{align*}
 \end{conjecture}
 \end{frame}
-\begin{frame}{Application: Longest commun subsequence}
+\begin{frame}{Application: Longest common subsequence}
 
 
 \begin{theorem}\label{thmp}
@@ -890,8 +890,8 @@ For any $0\leq \alpha<2$, there exists $n_\alpha\geq 1$ such that for any $n>n_\
 \begin{table}[]
 \begin{tabular}{|l|l|l|l|}
 \hline
-                   & \begin{tabular}[c]{@{}l@{}}GUE\\ + Wigner (with a good \\ controle on moments)\end{tabular} & Plancherel                                                      & \begin{tabular}[c]{@{}l@{}}Random permutations \\ (with a good controle\\  on cycles's number)\end{tabular} \\ \hline
-Extreme particule  & T.W                                                                                          & T.W                                                             & \cellcolor[HTML]{34FF34}T.W                                                                                 \\ \hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE\\ + Wigner (with a good \\ control on moments)\end{tabular} & Plancherel                                                      & \begin{tabular}[c]{@{}l@{}}Random permutations \\ (with a good control\\  on cycles' number)\end{tabular} \\ \hline
+Extreme particle  & T.W                                                                                          & T.W                                                             & \cellcolor[HTML]{34FF34}T.W                                                                                 \\ \hline
 Edge               & Soft edge (Airy)                                                                             & \begin{tabular}[c]{@{}l@{}}Soft edge \\ (Airy)\end{tabular}     & \cellcolor[HTML]{34FF34}Soft edge (Airy)                                                                    \\ \hline
 Global convergence & Semi circular                                                                                & VKLS                                                            & \cellcolor[HTML]{34FF34}VKLS                                                                                \\ \hline
 Fluctuations       & Gaussian                                                                                  & Gaussian                                                        & {\color[HTML]{FE0000} ??}                                                                                   \\ \hline
@@ -903,12 +903,12 @@ Bulk               & Sine process                                               
 
 \begin{frame}{Conjectures}
 \begin{itemize}
-\item We need only $\frac{\#(\sigma_n)}{n^\frac{1}{2}} \overset{\mathbb{P}}\to 0 $ to obtain Tracy-widom fluctuations. 
-\item For any sequence of random permutations invarient under conjugation, for any $\varepsilon>0$
+\item We need only $\frac{\#(\sigma_n)}{n^\frac{1}{2}} \overset{\mathbb{P}}\to 0 $ to obtain Tracy-Widom fluctuations. 
+\item For any sequence of random permutations invariant under conjugation, for any $\varepsilon>0$
 \begin{align*}
 \lim_{n\to \infty} \mathbb{P}\left(\sup_{s\in \mathbb{R}} \left|\frac{1}{2\sqrt{n}}L_{\lambda(\sigma_n)}\left({2s\sqrt{n-fix(\sigma_n)}}\right)-\sqrt{1-\frac{fix(\sigma_n)}{n}}\Omega\left(s\right)\right|<\varepsilon\right) =1.
 \end{align*}
-\item Under a good controle on cycles we have discrete sine process (Bulk).
+\item Under a good control on cycles we have discrete sine process (Bulk).
 \end{itemize}
 
 \end{frame}
