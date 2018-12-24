@@ -1,4 +1,4 @@
-\documentclass[english]{beamer}
+ 	\documentclass[english,xcolor=table]{beamer}
 \usepackage[round]{natbib}
 
 \usepackage{pgfpages}
@@ -44,8 +44,8 @@
 \subtitle {Séminaire MEGA}
 \author 
 { \large{Mohamed Slim Kammoun}
-\\ \small{University of Lille} \\ \ \\ \large{Supervisors :  Mylène Maïda  and Adrien Hardy}
-\\ \small{University of Lille}
+\\  \ \\ \large{Supervisors:  Mylène Maïda  and Adrien Hardy}
+\\ \ \\ {Laboratoire Paul Painlevé, Université de Lille}
 }
 \date {  January 11, 2019}
 \titlegraphic{
@@ -72,19 +72,25 @@
 \begin{frame}{Universality}
  Continuous case, 
     \begin{itemize}
-        \item Global (semi circular law) : 
+        \item Global (semi circular law): 
         \cite{10.2307/1970008,Pastur1972}. 
-        \item Local convergence (Sine process): \cite*{MR2411912,Erdos2010}
-        \item Edge (Airy ensemble and Tracy-Widom fluctuations) : \cite{tao2011}.
+        \item Local convergence (sine process): \cite*{MR2411912,Erdos2010}.
+        \item Edge (Airy ensemble and Tracy-Widom fluctuations): \cite{tao2011}.
      
     \end{itemize}
-    \ \\ 
-    \ \\ 
-    Same limit objects for random permutations (uniform setting).  
-    \\
-    \ \\ 
-        \ \\ 
-Universality for  random permutations ?
+    \footnotesize{
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ controle on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Plancherel\\ (Uniform permutation)\end{tabular} \\ \hline
+Extreme particule  & T.W                                                                                        & T.W                                                                        \\ \hline
+Edge               & Soft edge (Airy)                                                                           & Soft edge  (Airy)                                                          \\ \hline
+Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
+Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
+Bulk               & Sine process                                                                               & discrete sine process                                                       \\ \hline
+\end{tabular}
+\end{table}}
+\large{Universality for  random permutations ?}
 \end{frame}
 
 
@@ -99,11 +105,11 @@ Universality for  random permutations ?
 \begin{frame}{Longest increasing subsequence}
 \begin{itemize}
 
-\item $\mathfrak{S_n}$ : symmetric group, (the  group of permutations of $\{1,\dots,n\})$
+\item $\mathfrak{S_n}$: symmetric group, (the  group of permutations of $\{1,\dots,n\}).$
 \\ 
 \item $(\sigma(i_1),\dots,\sigma(i_k))$  increasing  subsequence of $\sigma$ of length $k$ if $i_1<i_2<\dots<i_k$ and $\sigma(i_1)<\dots<\sigma(i_k)$.
-\item $\ell(\sigma)$ : the length of the longest increasing subsequence of $\sigma$.
-\item For example : $$\sigma = \begin{pmatrix} 
+\item $\ell(\sigma)$: the length of the longest increasing subsequence of $\sigma$.
+\item For example: $$\sigma = \begin{pmatrix} 
 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 3 & 8 & \color{red} 1 &\color{red} 2 &\color{red} 4 & 7 &\color{red} 5 &\color{red} 6
   \end{pmatrix}.$$
@@ -115,7 +121,7 @@ $\ell(\sigma)=5$.
     \end{conjecture}
 \end{frame}
 
-\begin{frame}{Longuest increasing subsequence}
+\begin{frame}{Longest increasing subsequence}
 \begin{theorem}[\cite{vershik,LOGAN}]
   If $\sigma_n \sim {U}_{\mathfrak{S}_n}$ then
     $$\lim_{n\to \infty}\frac{\mathbb{E}(\ell(\sigma_n))}{\sqrt{n}}=2$$
@@ -128,10 +134,10 @@ $\ell(\sigma)=5$.
 \lim_{n \to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s).
 \end{equation*}
 \end{theorem}
-    $F_2$ : CDF of the GUE Tracy-Widom distribution. 
+    $F_2$: CDF of the GUE Tracy-Widom distribution. 
 \end{frame}
 
-\begin{frame}{Longuest increasing subsequence}
+\begin{frame}{Longest increasing subsequence}
     \begin{theorem}[\cite{sk}]
 Assume that the sequence of random permutations  $(\sigma_n)_{n\geq 1}$ satisfies:
 \begin{itemize}
@@ -145,9 +151,9 @@ Assume that the sequence of random permutations  $(\sigma_n)_{n\geq 1}$ satisfie
 \end{equation}
 \end{itemize}
 Then  for all  $s \in \mathbb{R}$,
-\begin{equation*} 
+\begin{equation}\tag{TW}\label{TW} 
 \lim_{n\to \infty} \mathbb{P}\left(\frac{\ell(\sigma_n)-2\sqrt{n}}{n^\frac 16}\leq s\right)=F_2(s).
-\end{equation*}
+\end{equation}
 \end{theorem}
 \end{frame}
 
@@ -160,8 +166,8 @@ Let $\theta\geq 0$. If $\sigma_n\sim Ew(\theta)$ then
 \vspace{5 mm}
 
 \begin{itemize}
-\item $\theta=1$ :  uniform distribution.
-\item $\theta=0$ : uniform distribution on permutations with a unique cycle. 
+\item $\theta=1$:  uniform distribution.
+\item $\theta=0$: uniform distribution on permutations with a unique cycle. 
 \item $\mathbb{E}(\#(\sigma_n))= 1+\sum_{k=1}^{n-1} \frac{\theta}{\theta+k}\sim \theta \log(n).$
 \end{itemize}
 \end{frame}
@@ -177,19 +183,19 @@ Then
 \end{equation}
 \end{corollary}
 \vspace{10 mm }
-Other applications : Ewens-Pitman, virtual permutations (Kingman), etc.
+Other applications: Ewens-Pitman, virtual permutations (Kingman), etc.
 \end{frame}
 
 \begin{frame}{Proof}
-We denote by :
+We denote by:
 \begin{itemize}
-    \item $A_\sigma :=
+    \item $A_\sigma:=
     \begin{cases}
         \left\{\rho\in\mathfrak{S}_n, \sigma\circ\rho^{-1}=(i,j)  \text{ and }  \#(\rho)=\#(\sigma)-1 \right\} & \text{ if } \#(\sigma)>1
         \\ \{\sigma\} & \text{ if } \#(\sigma)=1
     \end{cases}.
     $
-    \item $T$ : Markov operator associated to  $\left[\frac{\mathbf{1}_{A_{\sigma_1}(\sigma_2)}}{card(A_{\sigma_1})}\right]_{\sigma_1,\sigma_2\in \mathfrak{S}_n}$
+    \item $T$: Markov operator associated to  $\left[\frac{\mathbf{1}_{A_{\sigma_1}}(\sigma_2)}{card(A_{\sigma_1})}\right]_{\sigma_1,\sigma_2\in \mathfrak{S}_n}$.
 \end{itemize}
 
 \end{frame}
@@ -227,14 +233,14 @@ We denote by :
 \end{frame}
 \begin{frame}{Proof}
     \begin{itemize}
-        \item If $\sigma_n$ is stable under conjugation, $T(\sigma_n)$ is also stable under conjugation.
+        \item If $\sigma_n$ is invariant under conjugation, $T(\sigma_n)$ is also invariant under conjugation.
         \item $
-\#(T^{n-1} \left(\sigma_{n})\right)\overset{a.s}{=}\max(\#(\sigma_n)-n+1,1)=1. $  
+\#(T \left(\sigma_{n})\right)\overset{a.s}{=}\max(\#(\sigma_n)-1,1). $  
     \end{itemize}
-    Consequently, if $\sigma_n$ is stable under conjugation, then 
+    Consequently, if $\sigma_n$ is invariant under conjugation, then 
     \begin{itemize}
-        \item If $\sigma_n$ is stable under conjugation, $T^{n-1}(\sigma_n)$ is also stable under conjugation.
-        \item Almost surely, $\#\left(T^{n-1}(\sigma_n)\right)=1$
+        \item If $\sigma_n$ is invariant under conjugation, $T^{n-1}(\sigma_n)$ is also invariant under conjugation.
+        \item Almost surely, $\#\left(T^{n-1}(\sigma_n)\right)=1$.
     \end{itemize}
 \end{frame}
 \begin{frame}{Proof}
@@ -266,7 +272,7 @@ If $\sigma_n$ is invariant under conjugation then
 \end{itemize}
 Assume that  $\frac{\#(\sigma_n)}{n^\frac16} \overset{\mathbb{P}}\to 0 $.  We obtain $\frac{\ell(T^{n-1}(\sigma_n))-\ell(\sigma_n)}{n^\frac 16} \overset{\mathbb{P}}\to 0$.
 \end{corollary}    
-Uniform case \Rightarrow Ew(0) \Rightarrow  Invariant under conjugation +   $\frac{\#(\sigma_n)}{n^\frac16} \overset{\mathbb{P}}\to 0 $
+\eqref{TW}: Uniform $\Rightarrow$ $Ew(0)$ $\Rightarrow$  Invariant under conjugation +   $\frac{\#(\sigma_n)}{n^\frac16} \overset{\mathbb{P}}\to 0 $
 \end{frame}
 \section{The first arrows of random Young tableaux (edge)}
 
@@ -286,7 +292,7 @@ Uniform case \Rightarrow Ew(0) \Rightarrow  Invariant under conjugation +   $\fr
    \end{definition}
    \vspace{10 mm}
 
-   Example :  Young diagrams of size 3 are   \\ $\mathbb{Y}_3=(3,\underline{0}),(2,1,\underline{0}),(1,1,1,\underline{0})$
+   Example:  Young diagrams of size 3 are   \\ $\mathbb{Y}_3=(3,\underline{0}),(2,1,\underline{0}),(1,1,1,\underline{0})$
    \\   or $\left(\yng(3),\yng(2,1),\yng(1,1,1)\right)$.
    
  
@@ -298,9 +304,9 @@ Uniform case \Rightarrow Ew(0) \Rightarrow  Invariant under conjugation +   $\fr
     A Young tableau of shape $\lambda$ is a filling of the boxes of $\lambda$ using the entries $\{1,2,\dots,n\}$ and the entries in each row and each column are increasing.
     \end{definition}
     \begin{itemize}
-        \item     Example : Young tableaux of shape $\yng(3,1)$ are $\young(123,4),\young(124,3),\young(134,2)$. 
+        \item     Example: Young tableaux of shape $\yng(3,1)$ are $\young(123,4),\young(124,3),\young(134,2)$. 
     \item$dim(\lambda)=$ \# Young tableaux of shape $\lambda$. 
-    \item Example : $dim\left(\yng(3,1)\right)=3$.
+    \item Example: $dim\left(\yng(3,1)\right)=3$.
     \item $dim(\lambda) = $   dimension of the irreducible representation of  $\mathfrak{S}_n$ indexed by $\lambda$.
      \item $\sum_{\lambda \in \mathbb{Y}_n} dim(\lambda)^2=\#(\mathfrak{S}_n)=n!$.
     \end{itemize}
@@ -641,7 +647,7 @@ $$\young(12456,37,8),\young(12568,34,7) $$
 3 & 8 & 1 & 2 & 4 & 7 & 5 & 6
   \end{pmatrix}  \quad \text { then } \quad \lambda(\sigma)=\yng(5,2,1).$$ 
 
-    \item $\ell(\sigma)=\lambda_1(\sigma)$
+    \item $\ell(\sigma)=\lambda_1(\sigma).$
 \end{itemize}    
 \end{frame}
 
@@ -660,17 +666,17 @@ $$    \mathbb{P}(\lambda_\theta=\mu) = e^{-\theta}\frac{\theta^{|\mu|}dim(\mu)^2
 
 \end{frame}
 
-\begin{frame}{Edge : Plancherel case}
+\begin{frame}{Edge: Plancherel case}
 \begin{theorem} [\cite*{Borodin2000}]
  If $\sigma_n \sim {U}_{\mathfrak{S}_n}$ then  $\forall k \geq 1 $,  $\forall s_1,s_2,\dots,s_k \in \mathbb{R}$,
 \begin{equation*} 
 \lim_{n\to \infty}\mathbb{P}\left(\forall i\leq k, \;\frac{\lambda_i(\sigma_n)-2\sqrt{n}}{n^\frac{1}{6}}\leq s_i\right)=\mathbb{P}(\forall i\leq k,\;\xi_i\leq s_i).
 \end{equation*}
-$\{\xi_1\geq \xi_2,\dots\geq  \xi_k \geq  \dots \}$ : Airy ensemble.
+$\{\xi_1\geq \xi_2\geq\dots\geq  \xi_k \geq  \dots \}$: Airy ensemble.
 \end{theorem}
 
 \end{frame}
-\begin{frame}{Edge : generalization}
+\begin{frame}{Edge: generalization}
     \begin{theorem}[\cite{sk}]
 Assume that the sequence of random permutations  $(\sigma_n)_{n\geq 1}$ satisfies:
 \begin{itemize}
@@ -784,13 +790,13 @@ Consequently,
 
 
 
-\begin{frame}{Forme limite de Vershik-Kerov-Logan-Shepp}
+\begin{frame}{Vershik-Kerov-Logan-Shepp shape}
     \begin{theorem}[\cite{vershik,LOGAN}]
-    Si $\sigma_n \sim U_{\mathfrak{S}_n}$, alors pour tout $\varepsilon>0$,
+    If $\sigma_n \sim U_{\mathfrak{S}_n}$, then for any $\varepsilon>0$,
 \begin{align*}
 \lim_{n\to \infty} \mathbb{P}\left(\sup_{s\in \mathbb{R}} \left|\frac{1}{\sqrt{2n}}L_{\lambda(\sigma_n)}\left({s}{\sqrt{2n}}\right)-\Omega(s)\right|<\varepsilon\right) =1,
 \end{align*}
-où
+where
 \begin{align*}
 \Omega(s):=\begin{cases}
 \frac{2}{\pi}(s\arcsin({s})+\sqrt{1-s^2}) & \text{ si } |s|<1 \\ 
@@ -800,7 +806,7 @@ où
     \end{theorem}
     \vspace{10 mm}
 
-    Il y a un lien entre $\Omega$ et la loi semi-circulaire de Wigner.
+     $\Omega$ is strongly related to the semi-circular law.
 \end{frame}
 \begin{frame}{Forme limite de Vershik-Kerov-Logan-Shepp}
     \begin{figure}[ht]
@@ -809,33 +815,103 @@ où
     \input{diag.pdf_tex}
        
 
-    \caption{Illustration de la convergence de   Vershik-Kerov-Logan-Shepp}
+    \caption{Typical Young diragram under the Plancherel distribution}
 \end{figure}
 
 \end{frame}
 
 
- \begin{frame}{Forme limite}
+ \begin{frame}{Limit shape}
     \begin{theorem}[\cite{sk}]
-Supposons que la suite de permutations aléatoires  $(\sigma_n)_{n\geq 1}$ satisfait:
+Assume that the sequence of random permutations  $(\sigma_n)_{n\geq 1}$ satisfies:
 \begin{itemize}
-\item  Pour tout entier strictement positif $n$, pour toutes permutations  $\sigma,\rho \in \mathfrak{S}_n$,
-\begin{equation*}
+\item  For all positive integer $n$, $\sigma_n$ is invariant under conjugation i.e.  $\forall \sigma , \rho \in \mathfrak{S}_n$,
+\begin{equation}\tag{H1}
 \mathbb{P}(\sigma_n=\sigma)=\mathbb{P}(\sigma_n=\rho^{-1}\sigma\rho).
-\end{equation*}
-\item Pour tout $\varepsilon>0$,
-\begin{equation*}
-\lim_{n\to \infty}\mathbb{P}\left(\frac{\#(\sigma_n)}{n} >\varepsilon\right) =0.
-\end{equation*}
+\end{equation}
+\item The number of cycles is such that: For all $\varepsilon>0$,
+\begin{equation}\tag{H3}
+\lim_{n\to \infty}\mathbb{P}\left(\frac{\#(\sigma_n)}{n}>\varepsilon\right) =0.
+\end{equation}
 \end{itemize}
-Alors pour  tout  $\varepsilon>0$,
+Then  for all  $\varepsilon>0$,
 \begin{align*}
 \lim_{n\to \infty} \mathbb{P}\left(\sup_{s\in \mathbb{R}} \left|\frac{1}{\sqrt{2n}}L_{\lambda(\sigma_n)}\left({s}{\sqrt{2n}}\right)-\Omega(s)\right|<\varepsilon\right) =1.
 \end{align*}
 \end{theorem}
 \end{frame}
 
+\begin{frame}{Proof}
 
+\begin{lemma} \label{34}
+Let $n,m\in \mathbb{N}^*$, $\lambda=(\lambda_i)_{i\geq1}\in\mathbb{Y}_n$, $\mu=(\mu_i)_{i\geq1}\in\mathbb{Y}_m$. Then,
+\begin{align*}\label{disVC}
+||L_\lambda-L_\mu||_{\infty}^2 \leq 4 \max_{i\geq 1} \left|\sum_{k=1}^i( \lambda_k-\mu_k)\right|.
+\end{align*}
+Consequently, 
+\begin{equation*}
+\sup_{s\in \mathbb{R}} \frac{1}{\sqrt{2n}}\left|L_{\lambda(\sigma_n)}\left({s}{\sqrt{2n}}\right)- L_{\lambda(T^{n-1}(\sigma_n))}\left({s}{\sqrt{2n}}\right)\right| \leq 2 \sqrt{\frac{\#(\sigma_n)-1}{n}}.
+\end{equation*}
+\end{lemma}
+\end{frame}
+\begin{frame}{Application: Longest commun subsequence}
+\begin{itemize}
+\item $(\sigma(i_1),\dots,\sigma(i_k))$ subsequence of $\sigma$ of length $k$ if $ i_1<i_2<,\dots,<i_k$.
+\item $LCS(\sigma_1,\sigma_2)$ the length of the longest common subsequence of two permutations.
+\end{itemize}
+
+\begin{conjecture}[\cite{MR3509473}]
+ For any integer $n\geq 1$,  for any $\sigma_{1,n}$ and $\sigma_{2,n}$   independent and identically distributed  random permutations,
+\begin{align*}
+    \mathbb{E}(LCS(\sigma_{1,n},\sigma_{2,n}))\geq \sqrt{n}.
+\end{align*}
+\end{conjecture}
+\end{frame}
+\begin{frame}{Application: Longest commun subsequence}
+
+
+\begin{theorem}\label{thmp}
+For any $0\leq \alpha<2$, there exists $n_\alpha\geq 1$ such that for any $n>n_\alpha$, for any $\sigma_{1,n}$ and $\sigma_{2,n}$   independent and identically distributed  random permutations with distribution invariant under conjugation.
+\begin{align*}
+    \mathbb{E}(LCS(\sigma_{1,n},\sigma_{2,n}))\geq \alpha\sqrt{n}.
+\end{align*}
+\end{theorem}
+
+  
+\end{frame}
+\begin{frame}{Conclusion}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\scriptsize{
+\begin{table}[]
+\begin{tabular}{|l|l|l|l|}
+\hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE\\ + Wigner (with a good \\ controle on moments)\end{tabular} & Plancherel                                                      & \begin{tabular}[c]{@{}l@{}}Random permutations \\ (with a good controle\\  on cycles's number)\end{tabular} \\ \hline
+Extreme particule  & T.W                                                                                          & T.W                                                             & \cellcolor[HTML]{34FF34}T.W                                                                                 \\ \hline
+Edge               & Soft edge (Airy)                                                                             & \begin{tabular}[c]{@{}l@{}}Soft edge \\ (Airy)\end{tabular}     & \cellcolor[HTML]{34FF34}Soft edge (Airy)                                                                    \\ \hline
+Global convergence & Semi circular                                                                                & VKLS                                                            & \cellcolor[HTML]{34FF34}VKLS                                                                                \\ \hline
+Fluctuations       & Gaussian                                                                                  & Gaussian                                                        & {\color[HTML]{FE0000} ??}                                                                                   \\ \hline
+Bulk               & Sine process                                                                                 & \begin{tabular}[c]{@{}l@{}}discrete sine \\ process\end{tabular} & {\color[HTML]{FE0000} ??}                                                                                   \\ \hline
+\end{tabular}
+\end{table}
+}
+\end{frame}
+
+\begin{frame}{Conjectures}
+\begin{itemize}
+\item We need only $\frac{\#(\sigma_n)}{n^\frac{1}{2}} \overset{\mathbb{P}}\to 0 $ to obtain Tracy-widom fluctuations. 
+\item For any sequence of random permutations invarient under conjugation, for any $\varepsilon>0$
+\begin{align*}
+\lim_{n\to \infty} \mathbb{P}\left(\sup_{s\in \mathbb{R}} \left|\frac{1}{2\sqrt{n}}L_{\lambda(\sigma_n)}\left({2s\sqrt{n-fix(\sigma_n)}}\right)-\sqrt{1-\frac{fix(\sigma_n)}{n}}\Omega\left(s\right)\right|<\varepsilon\right) =1.
+\end{align*}
+\item Under a good controle on cycles we have discrete sine process (Bulk).
+\end{itemize}
+
+\end{frame}
 
 \begin{frame}
 
