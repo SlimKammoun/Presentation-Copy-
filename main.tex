@@ -70,7 +70,35 @@
 
 \section*{Introduction}
 \begin{frame}{Universality}
- Continuous case, 
+ \begin{overprint}
+\onslide<1>
+GUE :
+\begin{table}[]
+\begin{tabular}{|l|l|}
+\hline
+                   & GUE              \\ \hline
+Biggest particule  & T.W              \\ \hline
+Edge               & Soft edge (Airy) \\ \hline
+Global convergence & Semi circular    \\ \hline
+Fluctuations       & Gaussian         \\ \hline
+Bulk               & Sine process     \\ \hline
+\end{tabular}
+\end{table}
+
+\onslide<2>
+
+\begin{table}[]
+\begin{tabular}{|l|l|}
+\hline
+                   & GUE              \\ \hline
+Biggest particule  & T.W              \\ \hline
+Edge               & Soft edge (Airy) \\ \hline
+Global convergence & Semi circular    \\ \hline
+Fluctuations       & Gaussian         \\ \hline
+Bulk               & Sine process     \\ \hline
+\end{tabular}
+\end{table}
+Random matrices, OP ensembles DPP etc. 
     \begin{itemize}
         \item Global (semi circular law): 
         \cite{10.2307/1970008,Pastur1972}. 
@@ -78,19 +106,53 @@
         \item Edge (Airy ensemble and Tracy-Widom fluctuations): \cite{tao2011}.
      
     \end{itemize}
+\onslide<3>    
+\begin{table}[]
+\begin{tabular}{|l|l|}
+\hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner\\ (with a good control on moments)\end{tabular} \\ \hline
+Extreme particle  & T.W                                                                                     \\ \hline
+Edge               & Soft edge (Airy)                                                                        \\ \hline
+Global convergence & Semi circular                                                                           \\ \hline
+Fluctuations       & Gaussian                                                                                \\ \hline
+Bulk               & Sine process                                                                            \\ \hline
+\end{tabular}
+\end{table}    
+    
+\onslide<4>    
+    
     \footnotesize{
 \begin{table}[]
 \begin{tabular}{|l|l|l|}
 \hline
-                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Plancherel\\ (Uniform permutation)\end{tabular} \\ \hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
 Extreme particle  & T.W                                                                                        & T.W                                                                        \\ \hline
 Edge               & Soft edge (Airy)                                                                           & Soft edge  (Airy)                                                          \\ \hline
 Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
 Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
-Bulk               & Sine process                                                                               & discrete sine process                                                       \\ \hline
+Bulk               & Sine process                                                                               & 
+Discrete sine process                                                       \\ \hline
+\end{tabular}
+\end{table}}
+\onslide<5>    
+    
+    \footnotesize{
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
+Extreme particle  & T.W                                                                                        & T.W                                                                        \\ \hline
+Edge               & Soft edge (Airy)                                                                           & Soft edge  (Airy)                                                          \\ \hline
+Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
+Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
+Bulk               & Sine process                                                                               & Discrete sine process                                                       \\ \hline
 \end{tabular}
 \end{table}}
 \large{Universality for  random permutations ?}
+\large{Independence? Moments?}
+
+\end{overprint}
+
 \end{frame}
 
 
@@ -137,6 +199,20 @@ $\ell(\sigma)=5$.
     $F_2$: CDF of the GUE Tracy-Widom distribution. 
 \end{frame}
 
+\begin{frame}
+\footnotesize{
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
+Extreme particle  & T.W                                                                                        & {\color{red}T.W}                                                                        \\ \hline
+Edge               & Soft edge (Airy)                                                                           & Soft edge  (Airy)                                                          \\ \hline
+Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
+Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
+Bulk               & Sine process                                                                               & Discrete sine process                                                       \\ \hline
+\end{tabular}
+\end{table}}
+\end{frame}
 \begin{frame}{Longest increasing subsequence}
     \begin{theorem}[\cite{sk}]
 Assume that the sequence of random permutations  $(\sigma_n)_{n\geq 1}$ satisfies:
@@ -261,7 +337,6 @@ Then  $\sigma_n \sim Ew(0).$
 \end{frame}
 
 \begin{frame}{Proof}
-\begin{corollary}
 If $\sigma_n$ is invariant under conjugation then
 \begin{itemize}
     \item $T^{n-1}(\sigma_n)\sim Ew(0).$
@@ -271,7 +346,8 @@ If $\sigma_n$ is invariant under conjugation then
 \leq  2(\#(\sigma_n)-1).$$
 \end{itemize}
 Assume that  $\frac{\#(\sigma_n)}{n^\frac16} \overset{\mathbb{P}}\to 0 $.  We obtain $\frac{\ell(T^{n-1}(\sigma_n))-\ell(\sigma_n)}{n^\frac 16} \overset{\mathbb{P}}\to 0$.
-\end{corollary}    
+\\ 
+
 \eqref{TW}: Uniform $\Rightarrow$ $Ew(0)$ $\Rightarrow$  Invariant under conjugation +   $\frac{\#(\sigma_n)}{n^\frac16} \overset{\mathbb{P}}\to 0 $
 \end{frame}
 \section{The first arrows of random Young tableaux (edge)}
@@ -695,7 +771,7 @@ Then  for all  $s \in \mathbb{R}$,
 \end{theorem}
 \end{frame}
 
-\begin{frame}{Green's theorem}
+\begin{frame}{Greene's theorem}
     We denote by  \begin{align*}
 \mathfrak{I}_1(\sigma):&=\{s\subset\{1,2,\dots,n\};\; \forall i,j \in s,\; (i-j)(\sigma(i)-\sigma(j))\geq 0 \},
 \\\mathfrak{I}_{k+1}(\sigma):&=\{s\cup s',\; s\in \mathfrak{I}_k,\;s'\in \mathfrak{I}_1\}.
@@ -808,7 +884,7 @@ where
 
      $\Omega$ is strongly related to the semi-circular law.
 \end{frame}
-\begin{frame}{Forme limite de Vershik-Kerov-Logan-Shepp}
+\begin{frame}{Vershik-Kerov-Logan-Shepp shape}
     \begin{figure}[ht]
     \centering
      \def\svgscale{.65}
@@ -895,7 +971,7 @@ Extreme particle  & T.W                                                         
 Edge               & Soft edge (Airy)                                                                             & \begin{tabular}[c]{@{}l@{}}Soft edge \\ (Airy)\end{tabular}     & \cellcolor[HTML]{34FF34}Soft edge (Airy)                                                                    \\ \hline
 Global convergence & Semi circular                                                                                & VKLS                                                            & \cellcolor[HTML]{34FF34}VKLS                                                                                \\ \hline
 Fluctuations       & Gaussian                                                                                  & Gaussian                                                        & {\color[HTML]{FE0000} ??}                                                                                   \\ \hline
-Bulk               & Sine process                                                                                 & \begin{tabular}[c]{@{}l@{}}discrete sine \\ process\end{tabular} & {\color[HTML]{FE0000} ??}                                                                                   \\ \hline
+Bulk               & Sine process                                                                                 & \begin{tabular}[c]{@{}l@{}}Discrete sine \\ process\end{tabular} & {\color[HTML]{FE0000} ??}                                                                                   \\ \hline
 \end{tabular}
 \end{table}
 }
