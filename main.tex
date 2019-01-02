@@ -43,7 +43,7 @@
 
 \subtitle {Séminaire MEGA}
 \author 
-{ \large{Mohamed Slim Kammoun}
+{ \large{ Slim Kammoun}
 \\  \ \\ \large{Supervisors:  Mylène Maïda  and Adrien Hardy}
 \\ \ \\ {Laboratoire Paul Painlevé, Université de Lille}
 }
@@ -77,7 +77,7 @@ GUE :
 \begin{tabular}{|l|l|}
 \hline
                    & GUE              \\ \hline
-Biggest particule  & T.W              \\ \hline
+Biggest particle  & T.W              \\ \hline
 Edge               & Soft edge (Airy) \\ \hline
 Global convergence & Semi circular    \\ \hline
 Fluctuations       & Gaussian         \\ \hline
@@ -91,7 +91,7 @@ Bulk               & Sine process     \\ \hline
 \begin{tabular}{|l|l|}
 \hline
                    & GUE              \\ \hline
-Biggest particule  & T.W              \\ \hline
+Biggest particle  & T.W              \\ \hline
 Edge               & Soft edge (Airy) \\ \hline
 Global convergence & Semi circular    \\ \hline
 Fluctuations       & Gaussian         \\ \hline
@@ -103,7 +103,7 @@ Random matrices, OP ensembles DPP etc.
         \item Global (semi circular law): 
         \cite{10.2307/1970008,Pastur1972}. 
         \item Local convergence (sine process): \cite*{MR2411912,Erdos2010}.
-        \item Edge (Airy ensemble and Tracy-Widom fluctuations): \cite{tao2011}.
+        \item Edge (Airy ensemble and Tracy-Widom fluctuations): \cite{Soshnikov1999,tao2011}.
      
     \end{itemize}
 \onslide<3>    
@@ -111,7 +111,7 @@ Random matrices, OP ensembles DPP etc.
 \begin{tabular}{|l|l|}
 \hline
                    & \begin{tabular}[c]{@{}l@{}}GUE + Wigner\\ (with a good control on moments)\end{tabular} \\ \hline
-Extreme particle  & T.W                                                                                     \\ \hline
+Biggest particle  & T.W                                                                                     \\ \hline
 Edge               & Soft edge (Airy)                                                                        \\ \hline
 Global convergence & Semi circular                                                                           \\ \hline
 Fluctuations       & Gaussian                                                                                \\ \hline
@@ -126,7 +126,7 @@ Bulk               & Sine process                                               
 \begin{tabular}{|l|l|l|}
 \hline
                    & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
-Extreme particle  & T.W                                                                                        & T.W                                                                        \\ \hline
+Biggest particle  & T.W                                                                                        & T.W                                                                        \\ \hline
 Edge               & Soft edge (Airy)                                                                           & Soft edge  (Airy)                                                          \\ \hline
 Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
 Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
@@ -141,15 +141,18 @@ Discrete sine process                                                       \\ \
 \begin{tabular}{|l|l|l|}
 \hline
                    & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
-Extreme particle  & T.W                                                                                        & T.W                                                                        \\ \hline
+Biggest particle  & T.W                                                                                        & T.W                                                                        \\ \hline
 Edge               & Soft edge (Airy)                                                                           & Soft edge  (Airy)                                                          \\ \hline
 Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
 Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
 Bulk               & Sine process                                                                               & Discrete sine process                                                       \\ \hline
 \end{tabular}
 \end{table}}
-\large{Universality for  random permutations ?}
-\large{Independence? Moments?}
+\begin{itemize}
+\item \large{Universality for  random permutations ?}
+\item \large{Independence?}
+\item \large{Moments?}
+\end{itemize}
 
 \end{overprint}
 
@@ -205,7 +208,7 @@ $\ell(\sigma)=5$.
 \begin{tabular}{|l|l|l|}
 \hline
                    & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
-Extreme particle  & T.W                                                                                        & {\color{red}T.W}                                                                        \\ \hline
+Biggest particle  & T.W                                                                                        & {\color{red}T.W}                                                                        \\ \hline
 Edge               & Soft edge (Airy)                                                                           & Soft edge  (Airy)                                                          \\ \hline
 Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
 Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
@@ -262,12 +265,14 @@ Then
 Other applications: Ewens-Pitman, virtual permutations (Kingman), etc.
 \end{frame}
 
-\begin{frame}{Proof}
+\begin{frame}{Proof} 
+By comparaision with the uniform setting. 
+\\ 
 We denote by:
 \begin{itemize}
     \item $A_\sigma:=
     \begin{cases}
-        \left\{\rho\in\mathfrak{S}_n, \sigma\circ\rho^{-1}=(i,j)  \text{ and }  \#(\rho)=\#(\sigma)-1 \right\} & \text{ if } \#(\sigma)>1
+        \left\{\rho\in\mathfrak{S}_n,\rho =\sigma\circ(i,j)  \text{ and }  \#(\rho)=\#(\sigma)-1 \right\} & \text{ if } \#(\sigma)>1
         \\ \{\sigma\} & \text{ if } \#(\sigma)=1
     \end{cases}.
     $
@@ -750,6 +755,18 @@ $$    \mathbb{P}(\lambda_\theta=\mu) = e^{-\theta}\frac{\theta^{|\mu|}dim(\mu)^2
 \end{equation*}
 $\{\xi_1\geq \xi_2\geq\dots\geq  \xi_k \geq  \dots \}$: Airy ensemble.
 \end{theorem}
+\footnotesize{
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
+Biggest particle  & T.W                                                                                        & T.W                                                                        \\ \hline
+Edge               & Soft edge (Airy)                                                                           & {\color{red} Soft edge  (Airy)}                                                          \\ \hline
+Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
+Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
+Bulk               & Sine process                                                                               & Discrete sine process                                                       \\ \hline
+\end{tabular}
+\end{table}}
 
 \end{frame}
 \begin{frame}{Edge: generalization}
@@ -785,7 +802,7 @@ For any permutation $ \sigma\in \mathfrak{S}_n$,
 \end{lemma}
 In particular, $$\max_{s\in \mathfrak{I}_1(\sigma)} |s| =\lambda_1(\sigma)=\ell(\sigma).$$
 \end{frame}
-\section{The Vershik-Kerov-Logan-Shepp shape (global convergence)}
+\section{The Vershik-Kerov-Logan-Shepp shape}
 \begin{frame}{Proof}
 \begin{lemma} \label{lemma2}
 For any permutation $\sigma$ and transposition  $\tau$,\begin{equation*} \label{sum}
@@ -881,19 +898,40 @@ where
 \end{align*}
     \end{theorem}
     \vspace{10 mm}
-
+\end{frame}
+\begin{frame}{Vershik-Kerov-Logan-Shepp shape}
      $\Omega$ is strongly related to the semi-circular law.
+\\
+We denote by
+$$ \omega(s):= \frac{\Omega(2s)-|2s|}{2}.$$	
+We have
+\begin{equation*}
+\exp\left(\int_\mathbb{R} \frac{d\omega(u)}{u-\frac{1}{x}}\right)=\int_\mathbb{R} \frac{d\mu_{sc}(u)}{1-{u}{x}}
+\end{equation*}
+with 
+$$d \mu_{sc}(u) := \frac{\sqrt{4-u^2}}{2\pi} du.
+$$
 \end{frame}
 \begin{frame}{Vershik-Kerov-Logan-Shepp shape}
     \begin{figure}[ht]
     \centering
-     \def\svgscale{.65}
+     \def\svgscale{.35}
     \input{diag.pdf_tex}
-       
 
     \caption{Typical Young diagram under the Plancherel distribution}
 \end{figure}
-
+\footnotesize{
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
+Biggest particle  & T.W                                                                                        & T.W                                                                        \\ \hline
+Edge               & Soft edge (Airy)                                                                           & { Soft edge  (Airy)}                                                          \\ \hline
+Global convergence & Semi circular                                                                              & {\color{red}VKLS}                                                                       \\ \hline
+Fluctuations       & Gaussian  & Gaussian                                                                   \\ \hline
+Bulk               & Sine process                                                                               & Discrete sine process                                                       \\ \hline
+\end{tabular}
+\end{table}}
 \end{frame}
 
 
@@ -930,6 +968,58 @@ Consequently,
 \end{equation*}
 \end{lemma}
 \end{frame}
+\begin{frame} {Fluctuations : Kerov's central limit theorem }
+\begin{theorem}[\cite*{10.1007/978-94-010-0524-1_3}]
+\begin{equation*}
+L_{\lambda(\sigma_n)}\left({s}{\sqrt{n}}\right)- \sqrt{n}\Omega(s) \sim \Delta(s)= \Delta(cos(\theta))=
+\frac{1}{\pi}\sum_{k=2}^\infty \frac{\xi_k}{\sqrt{k}} sin(k\theta) 
+\end{equation*}
+$\xi_k \sim \mathcal{N}(0,1)$ i.i.d 
+\end{theorem}
+\footnotesize{
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
+Biggest particle  & T.W                                                                                        & T.W                                                                        \\ \hline
+Edge               & Soft edge (Airy)                                                                           & { Soft edge  (Airy)}                                                          \\ \hline
+Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
+Fluctuations       & Gaussian  & {\color{red}Gaussian}                                                                   \\ \hline
+Bulk               & Sine process                                                                               & Discrete sine process                                                       \\ \hline
+\end{tabular}
+\end{table}}
+\end{frame}
+
+
+\begin{frame} {Bulk}
+\begin{theorem}[\cite*{1MR1758751}]
+For any $|\alpha|< 2$, under Plancherel measure,
+\begin{equation*}
+\{\lambda_i-i-\alpha\sqrt n\}_{i\geq1} \to Sin_\alpha.
+\end{equation*}
+$Sin_\alpha$ D.P.P with kernel 
+\begin{equation*}
+K_\alpha(x,y)=\begin{cases}
+\frac{sin(arccos(\frac{\alpha}{2})(x-y))}{\pi(x-y)} & \text{ if } 
+x\neq y \\ 
+\frac{arcos(\frac{\alpha}{2})}{\pi} & \text{ if } x=y
+\end{cases}
+\end{equation*}
+\end{theorem}
+\footnotesize{
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE + Wigner (with a good \\ control on moments)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Uniform permutation \end{tabular} \\ \hline
+Biggest particle  & T.W                                                                                        & T.W                                                                        \\ \hline
+Edge               & Soft edge (Airy)                                                                           & { Soft edge  (Airy)}                                                          \\ \hline
+Global convergence & Semi circular                                                                              & VKLS                                                                       \\ \hline
+Fluctuations       & Gaussian  & {Gaussian}                                                                   \\ \hline
+Bulk               & Sine process                                                                               & {\color{red}Discrete sine process}                                                       \\ \hline
+\end{tabular}
+\end{table}}
+\end{frame}
+
 \begin{frame}{Application: Longest commun subsequence}
 \begin{itemize}
 \item $(\sigma(i_1),\dots,\sigma(i_k))$ subsequence of $\sigma$ of length $k$ if $ i_1<i_2<,\dots,<i_k$.
@@ -966,8 +1056,8 @@ For any $0\leq \alpha<2$, there exists $n_\alpha\geq 1$ such that for any $n>n_\
 \begin{table}[]
 \begin{tabular}{|l|l|l|l|}
 \hline
-                   & \begin{tabular}[c]{@{}l@{}}GUE\\ + Wigner (with a good \\ control on moments)\end{tabular} & Plancherel                                                      & \begin{tabular}[c]{@{}l@{}}Random permutations \\ (with a good control\\  on cycles' number)\end{tabular} \\ \hline
-Extreme particle  & T.W                                                                                          & T.W                                                             & \cellcolor[HTML]{34FF34}T.W                                                                                 \\ \hline
+                   & \begin{tabular}[c]{@{}l@{}}GUE\\ + Wigner (with a good \\ control on moments)\end{tabular} & Plancherel                                                      & \begin{tabular}[c]{@{}l@{}l@{}}Random permutations \\ invariant under conjugation \\ (with a good control\\  on cycles' number)\end{tabular} \\ \hline
+Biggest particle  & T.W                                                                                          & T.W                                                             & \cellcolor[HTML]{34FF34}T.W                                                                                 \\ \hline
 Edge               & Soft edge (Airy)                                                                             & \begin{tabular}[c]{@{}l@{}}Soft edge \\ (Airy)\end{tabular}     & \cellcolor[HTML]{34FF34}Soft edge (Airy)                                                                    \\ \hline
 Global convergence & Semi circular                                                                                & VKLS                                                            & \cellcolor[HTML]{34FF34}VKLS                                                                                \\ \hline
 Fluctuations       & Gaussian                                                                                  & Gaussian                                                        & {\color[HTML]{FE0000} ??}                                                                                   \\ \hline
@@ -975,6 +1065,11 @@ Bulk               & Sine process                                               
 \end{tabular}
 \end{table}
 }
+\begin{itemize}
+\large 
+\item Independance  $\sim$ invarience under conjugation ?
+\item Moments  $\sim$ cycles' strcture ?
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Conjectures}
@@ -1009,7 +1104,7 @@ Bulk               & Sine process                                               
 \color[rgb]{0.00,0.00,1.00}       \endfont 
         \baselineskip 7.0mm
 
-        Merci de votre attention
+        Thank you for your attention
 
       \end{center}    
 
@@ -1017,7 +1112,7 @@ Bulk               & Sine process                                               
   \end{columns}
 
 \end{frame}
-\begin{frame}{Références}
+\begin{frame}{References}
 \tiny
 
 \bibliographystyle{abbrvnat}
